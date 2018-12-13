@@ -1,0 +1,77 @@
+.menu{
+    position: fixed;
+    top: 1px;
+    background: burlywood;
+    left: 1px;
+    right: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    /* z-index: 1090; */
+    padding: 1%;
+}
+
+.login{
+    width: 50%;
+    float: left;
+    /* position: relative; */
+    /* z-index: 1; */
+}
+
+.search-basket{
+    width: 50%;
+    float: right;
+    /* position: relative; */
+    /* z-index: 1; */
+}
+
+.search{
+    width: 10%;
+    float: left;
+    /* position: relative; */
+    /* z-index: 1; */
+}
+
+.basket{
+    width: 10%;
+    float: right;
+    /* position: relative; */
+    /* z-index: 1; */
+}
+
+.products{
+    padding: 10px 0;
+    margin-top: 2%;
+    background: blue;
+    min-height: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    left: 1px;
+    right: 1px;
+    padding: 1%;
+    display: flex;
+    flex-flow: wrap;
+}
+
+.product{
+    background: indigo;
+    min-height: 30%;
+    width: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    left: 1px;
+    right: 1px;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.infoblock{
+    background: burlywood;
+    left: 1px;
+    right: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3px;
+    padding: 1%;
+}
