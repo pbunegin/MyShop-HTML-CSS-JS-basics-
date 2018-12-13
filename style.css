@@ -4,13 +4,13 @@
     background: burlywood;
     left: 1px;
     right: 1px;
-    margin-right: auto;
-    margin-left: auto;
+    box-sizing: border-box;
     /* z-index: 1090; */
     padding: 1%;
 }
 
 .login{
+    box-sizing: border-box;
     width: 50%;
     float: left;
     /* position: relative; */
@@ -18,6 +18,7 @@
 }
 
 .search-basket{
+    box-sizing: border-box;
     width: 50%;
     float: right;
     /* position: relative; */
@@ -25,6 +26,7 @@
 }
 
 .search{
+    box-sizing: border-box;
     width: 10%;
     float: left;
     /* position: relative; */
@@ -32,6 +34,7 @@
 }
 
 .basket{
+    box-sizing: border-box;
     width: 10%;
     float: right;
     /* position: relative; */
@@ -39,27 +42,26 @@
 }
 
 .products{
-    padding: 10px 0;
+    padding: 10px;
     margin-top: 2%;
     background: blue;
-    min-height: 75%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 0;
-    padding-right: 0;
     left: 1px;
     right: 1px;
     padding: 1%;
     display: flex;
     flex-flow: wrap;
+    /* position: relative; */
+    /* z-index: 1; */
 }
 
 .product{
     background: indigo;
     min-height: 30%;
-    width: 10%;
+    width: 15%;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
     left: 1px;
     right: 1px;
     padding: 1%;
@@ -70,8 +72,8 @@
     background: burlywood;
     left: 1px;
     right: 1px;
-    margin-right: auto;
-    margin-left: auto;
+    /* margin-right: auto;
+    margin-left: auto; */
     margin-top: 3px;
     padding: 1%;
 }
