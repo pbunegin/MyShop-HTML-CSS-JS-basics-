@@ -1,79 +1,168 @@
-.menu{
-    position: fixed;
-    top: 1px;
-    background: burlywood;
-    left: 1px;
-    right: 1px;
-    box-sizing: border-box;
-    /* z-index: 1090; */
-    padding: 1%;
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input{
+    border-radius: 10px;
+    outline: none;
+    padding: 0 5px;
 }
 
 .login{
-    box-sizing: border-box;
-    width: 50%;
-    float: left;
-    /* position: relative; */
-    /* z-index: 1; */
+    width: 200px;
+    height: 150px;
+    margin: auto;
+    background: cyan;
+    padding: 15px;
+    border-radius: 10px;
 }
 
-.search-basket{
-    box-sizing: border-box;
-    width: 50%;
-    float: right;
-    /* position: relative; */
-    /* z-index: 1; */
+input[src="img/logout.png"],
+input[src="img/basket.png"]{
+    width: 16px;
+}
+
+.login label,
+.login input{
+    display: table;
+    margin: 5px auto;
+}
+
+body{
+    /* padding-top: 3em; */
+}
+.menu{
+    position: fixed;
+    top: 0;
+    background: burlywood;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    height: 20px;
+}
+
+.cabinet{
+    width: 30%;
+    float: left;
+}
+.cabinet div,
+.cabinet form{
+    float: left;
+    margin: 0 5px;
 }
 
 .search{
-    box-sizing: border-box;
-    width: 10%;
+    width: 40%;
     float: left;
-    /* position: relative; */
-    /* z-index: 1; */
 }
 
 .basket{
-    box-sizing: border-box;
-    width: 10%;
+    width: 30%;
     float: right;
-    /* position: relative; */
-    /* z-index: 1; */
+}
+.basket .countProducts{
+    width: 12px;
+    border-radius: 100%;
+    font-size: 9px;
+    vertical-align: super;
+    font-weight: bold;
+    text-align: center;
+    padding: 1px;
+}
+.basket form,
+.basket .countProducts{
+    float: right;
+}
+.search form{
+    display: table;
+    margin: 0 auto;
 }
 
-.products{
-    padding: 10px;
-    margin-top: 2%;
-    background: blue;
+/* .countProducts{
+    border-radius: 100%;
+    border: 1px solid red;
+} */
+
+.content{
+    margin-top: 50px;
+}
+.category div{
+    display: table;
+    margin: 0 auto;
+}
+.infoblock div{
+    display: table;
+    margin: 0 auto;
+}
+
+.category{
+    margin-top: 5px;
+    background: rgb(0, 255, 128);
     left: 1px;
     right: 1px;
     padding: 1%;
+    position: sticky;
+    top: 3em;
+    z-index: 3;
+    border-radius: 10px;
+}
+.products{
+    padding: 10px;
+    margin-top: 5px;
+    background: blue;
+    left: 1px;
+    right: 1px;
     display: flex;
     flex-flow: wrap;
-    /* position: relative; */
-    /* z-index: 1; */
+    border-radius: 10px;
+}
+.logo:hover{
+    display: block;
 }
 
 .product{
     background: indigo;
-    min-height: 30%;
-    width: 15%;
+    max-height: 20%;
+    max-width: 20%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 1%;
     margin-bottom: 1%;
     left: 1px;
     right: 1px;
-    padding: 1%;
+    padding: 5px;
     border-radius: 10px;
 }
 
+.product .logo{
+    width: 35%;
+    float: left;
+    text-align: center;
+}
+
+.product .infoProduct{
+    width: 60%;
+    height: 100%;
+    float: right;
+    padding: 1px;
+    display: none;
+}
+
+.product .infoProduct .characteristics{
+    height: 70%;
+}
+
+.product .infoProduct .buttonAddToBasket form{
+    float: right;
+}
+
 .infoblock{
+    position: absolute;
     background: burlywood;
-    left: 1px;
-    right: 1px;
-    /* margin-right: auto;
-    margin-left: auto; */
+    left: 0;
+    right: 0;
     margin-top: 3px;
     padding: 1%;
 }
