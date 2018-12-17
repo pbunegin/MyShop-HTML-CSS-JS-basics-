@@ -23,11 +23,19 @@ sendButton.forEach(element => {
 });
 
 
-// function productClick() {
-//     product.setAttribute("style","border: 1px solid red; border-radius: 10px;");
-// }
+function productShow() {
+    for(let i = 0; i < products.length; ++i){
+        products[i].setAttribute("style","width:auto;");
+        let infoProduct = products[i].getElementsByClassName("infoProduct");
+        infoProduct[0].setAttribute("style","display:none;");
+    }
+    this.setAttribute("style","width:100%;");
+    let infoProduct = this.getElementsByClassName("infoProduct");
+    infoProduct[0].setAttribute("style","display:initial;");
+}
 
-// let product = document.getElementsByName("logo");
-// sendButton.forEach(element => {
-//     element.onclick = alert("346");
-// });
+let products = document.getElementsByClassName("product");
+for(let i = 0; i < products.length; ++i){
+    products[i].addEventListener('click',productShow);
+}
+
