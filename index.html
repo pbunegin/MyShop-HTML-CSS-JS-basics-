@@ -4,9 +4,92 @@
     <meta charset="utf-8">
     <title>Список товаров</title>
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
+    <div class="popupMenu" id="popup2">
+        <div class="popupContent">
+            <div class="popupClose clearfix">
+                <a href="javascript:searchHide()">
+                    <img class="imgSearch" value="Корзина" src="img/close.png">
+                </a>
+            </div>
+            <div class="poupSearchProducts">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popupMenu" id="popup1">
+        <div class="popupContent">
+            <div class="popupClose clearfix">
+                <a href="javascript:basketHide()">
+                    <img class="imgBasket" value="Корзина" src="img/close.png">
+                </a>
+            </div>
+            <div class="poupBasketProducts">
+                <div class="product">
+                    <div class="logo">
+                        <img src="prod1.jpg" value="logoButton" width="150px">
+                        <div class="productName">Телевизор</div>
+                    </div>
+                    <div class="infoProduct">
+                        <div class="characteristics">
+                            <ul>
+                                <li>sfhbsthnstr</li>
+                                <li>aervgaregvbr</li>
+                                <li>srthsthtsr</li>
+                                <li>srghsaerttsht</li>
+                            </ul>
+                        </div>
+                        <div class="buttonAddToBasket">
+                            <form><input type="button" value="В корзину" name="addToBasket"></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="logo">
+                        <img src="prod1.jpg" value="logoButton" width="150px">
+                        <div class="productName">Телевизор</div>
+                    </div>
+                    <div class="infoProduct">
+                        <div class="characteristics">
+                            <ul>
+                                <li>sfhbsthnstr</li>
+                                <li>aervgaregvbr</li>
+                                <li>srthsthtsr</li>
+                                <li>srghsaerttsht</li>
+                            </ul>
+                        </div>
+                        <div class="buttonAddToBasket">
+                            <form><input type="button" value="В корзину" name="addToBasket"></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="logo">
+                        <img src="prod1.jpg" value="logoButton" width="150px">
+                        <div class="productName">Телевизор</div>
+                    </div>
+                    <div class="infoProduct">
+                        <div class="characteristics">
+                            <ul>
+                                <li>sfhbsthnstr</li>
+                                <li>aervgaregvbr</li>
+                                <li>srthsthtsr</li>
+                                <li>srghsaerttsht</li>
+                            </ul>
+                        </div>
+                        <div class="buttonAddToBasket">
+                            <form><input type="button" value="В корзину" name="addToBasket"></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="menu">
         <div class="cabinet">
             <div class="username" id="username"></div>
@@ -15,15 +98,14 @@
             </form>
         </div>
         <div class="search">
-            <form>
-                <input type="button" name="search" value="search">
-            </form>
+            <a href="javascript:searchShow()">
+                <img class="imgSearch" value="Поиск" src="img/search.png">
+            </a>
         </div>
         <div class="basket">
-            <form>
-                <input type="image" value="Корзина" src="img/basket.png">
-                <div class="countProducts" id="countProducts"></div>
-            </form>
+            <a href="javascript:basketShow()">
+                <img class="imgBasket" value="Корзина" src="img/basket.png">
+            </a>
         </div>
 
     </div>
@@ -34,7 +116,8 @@
         <div class="products">
             <div class="product">
                 <div class="logo">
-                    <img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                    <img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -51,7 +134,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -68,7 +152,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -85,7 +170,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -102,7 +188,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -119,7 +206,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -142,7 +230,8 @@
 
         <div class="products">
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -159,7 +248,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -176,7 +266,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -193,7 +284,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -210,7 +302,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -227,7 +320,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -244,7 +338,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -261,7 +356,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -278,7 +374,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -295,7 +392,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -318,7 +416,8 @@
 
         <div class="products">
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -335,7 +434,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -352,7 +452,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -369,7 +470,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -386,7 +488,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -403,7 +506,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -420,7 +524,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -437,7 +542,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -454,7 +560,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -471,7 +578,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -488,7 +596,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -505,7 +614,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -522,7 +632,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -539,7 +650,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -556,7 +668,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">
@@ -573,7 +686,8 @@
                 </div>
             </div>
             <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px"><p>Телевизор</p>
+                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
+                    <div class="productName">Телевизор</div>
                 </div>
                 <div class="infoProduct">
                     <div class="characteristics">

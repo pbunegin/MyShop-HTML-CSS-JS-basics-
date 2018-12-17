@@ -22,7 +22,6 @@ sendButton.forEach(element => {
     element.onclick = login_click;
 });
 
-
 function productShow() {
     for(let i = 0; i < products.length; ++i){
         products[i].setAttribute("style","width:auto;");
@@ -31,7 +30,7 @@ function productShow() {
     }
     this.setAttribute("style","width:100%;");
     let infoProduct = this.getElementsByClassName("infoProduct");
-    infoProduct[0].setAttribute("style","display:initial;");
+    infoProduct[0].setAttribute("style","display:flex;");
 }
 
 let products = document.getElementsByClassName("product");
@@ -39,3 +38,22 @@ for(let i = 0; i < products.length; ++i){
     products[i].addEventListener('click',productShow);
 }
 
+$(document).ready(function(){  
+    PopUpHide();
+});
+
+function basketShow(){
+    $("#popup1").show();
+}
+
+function basketHide(){
+    $("#popup1").hide();
+}
+
+function searchShow(){
+    $("#popup2").show();
+}
+
+function searchHide(){
+    $("#popup2").hide();
+}

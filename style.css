@@ -20,8 +20,10 @@ input{
 }
 
 input[src="img/logout.png"],
-input[src="img/basket.png"]{
-    width: 16px;
+.imgBasket,
+.imgSearch{
+    max-height: 20px;
+    cursor:pointer;
 }
 
 .login label,
@@ -93,13 +95,10 @@ input[src="img/basket.png"]{
 
 .product{
     background: indigo;
-    margin: 5px auto;
+    margin: 10px;
     padding: 10px;
     border-radius: 10px;
     display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .logo{
@@ -108,23 +107,14 @@ input[src="img/basket.png"]{
 
 .infoProduct{
     display: flex;
-    flex-flow: row;
-    /* flex-direction: row; */
     flex-grow: 1;
     align-items: center;
-    justify-content: space-between;
-    padding: 1px;
     display: none;
 }
 
 .characteristics{
     flex-grow: 1;
     padding-left: 30px;
-}
-
-.product .infoProduct .buttonAddToBasket{
-    /* display: inline-block; */
-    height: 20%;
 }
 
 .infoblock{
@@ -134,4 +124,46 @@ input[src="img/basket.png"]{
     right: 0;
     margin-top: 3px;
     padding: 1%;
+}
+
+.popupMenu{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    position:fixed;
+    top:0px;
+    z-index: 2000;
+}
+.popupMenu .popupContent{
+    margin: 5% auto;
+    width: 80%;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+.popupMenu .infoProduct{
+    display: flex;
+}
+
+.poupBasketProducts{
+    border: 1px solid gray;
+    overflow: auto;
+    max-height: 400px;
+    background-color: rgb(230, 230, 230);
+}
+.popupClose a{
+    margin-bottom: 5px;
+    float: right;
+}
+
+/* .popupSearch .infoProduct{
+    display: flex;
+} */
+
+.poupSearchProducts{
+    border: 1px solid gray;
+    overflow: auto;
+    height: 400px;
 }
