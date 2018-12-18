@@ -58,23 +58,26 @@ if (!username.innerText) {
     location.replace("login.html");
 }
 
-let i = 0;
-function login_click() {
+function addToBasket() {
+    let addToBasketElement = this.parentElement;
+    addToBasketElement.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:none;");
+    // addToBasketElement.getElementsByClassName("removeFromBasket")[0].setAttribute("style", "display:none;");
+
+    $('#basketProducts').append(addToBasketElement);
+    // document.getElementsById("basketProducts").appendChild(addToBasketElement);
     let countProducts = document.getElementById("countProducts");
-    countProducts.innerText = ++i;
+    countProducts.innerText = $("basketProducts").length;
+
     countProducts.setAttribute("style", "border: 1px solid red; border-radius: 10px;");
 }
 
-let sendButton = document.getElementsByName("addToBasket");
-sendButton.forEach(element => {
-    element.onclick = login_click;
-});
+$('.addToBasket').on('click',addToBasket);
 
 function productShow() {
     if (this.hasAttribute("style")) {
         this.removeAttribute("style");
-        let infoProduct = this.getElementsByClassName("infoProduct");
-        infoProduct[0].setAttribute("style", "display:none;");
+        this.getElementsByClassName("infoProduct")[0].setAttribute("style", "display:none;");
+        this.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:none;");
         return;
     }
 
@@ -85,18 +88,15 @@ function productShow() {
     });
 
     this.setAttribute("style", "width:100%;");
-    let infoProduct = this.getElementsByClassName("infoProduct");
-    infoProduct[0].setAttribute("style", "display:flex;");
+    this.getElementsByClassName("infoProduct")[0].setAttribute("style", "display:flex;");
+    this.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:initial;");
+
 }
 
 let products = document.querySelectorAll(".product");
 products.forEach(element => {
     element.addEventListener('click', productShow);
 });
-
-// $(document).ready(function(){  
-//     PopUpHide();
-// });
 
 function basketShow() {
     $("#popup1").show();

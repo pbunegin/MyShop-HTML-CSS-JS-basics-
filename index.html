@@ -29,7 +29,7 @@
                     <img class="imgBasket" value="Корзина" src="img/close.png">
                 </a>
             </div>
-            <div class="poupBasketProducts">
+            <div class="poupBasketProducts" id="basketProducts">
                 <div class="product">
                     <div class="logo">
                         <img src="prod1.jpg" value="logoButton" width="150px">
@@ -106,6 +106,7 @@
         <div class="basket">
             <a href="javascript:basketShow()">
                 <img class="imgBasket" value="Корзина" src="img/basket.png">
+                <div class="countProducts" id="countProducts"></div>
             </a>
         </div>
 
@@ -129,10 +130,18 @@
                             <li>srghsaerttsht</li>
                         </ul>
                     </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
+                    <div class="price">12000</div>
                 </div>
+
+                <!-- <a href="javascript:login_click()"> -->
+                    <img class="addToBasket" value="В корзину" src="img/addToBasket.png">
+                <!-- </a> -->
+
+
+                <a href="javascript:basketShow()">
+                    <img class="removeFromBasket" value="В корзину" src="img/removeFromBasket.png">
+                </a>
+
             </div>
             <div class="product">
                 <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">

@@ -87,7 +87,6 @@ input[src="img/logout.png"],
     background:rgb(204, 204, 204);
     display: flex;
     flex-flow: wrap;
-    /* justify-content: space-between; */
     border-radius: 10px;
 }
 .product:hover{
@@ -98,9 +97,10 @@ input[src="img/logout.png"],
     width: 200px;
     background: white;
     margin: 10px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     display: flex;
+    align-items: center;
 }
 
 .logo{
@@ -114,10 +114,21 @@ input[src="img/logout.png"],
     display: none;
 }
 
-.characteristics{
+.characteristics,
+.price{
     flex-grow: 1;
     padding-left: 30px;
 }
+
+.addToBasket,
+.removeFromBasket{
+    display: none;
+    max-height: 40px;
+    margin-right: 20px;
+    cursor:pointer;
+    z-index: 5;
+}
+
 
 .infoblock{
     position: absolute;
