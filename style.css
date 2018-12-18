@@ -84,9 +84,10 @@ input[src="img/logout.png"],
 }
 .products{
     padding: 20px;
-    background: blue;
+    background:rgb(204, 204, 204);
     display: flex;
     flex-flow: wrap;
+    /* justify-content: space-between; */
     border-radius: 10px;
 }
 .product:hover{
@@ -94,7 +95,8 @@ input[src="img/logout.png"],
 }
 
 .product{
-    background: indigo;
+    width: 200px;
+    background: white;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
