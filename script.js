@@ -4,44 +4,29 @@ data.forEach(category => {
     productsDiv.className = "products";
     
     for (let i = 0; i < category.products.length; i++) {
-        let productDiv = createProduct(category.products[i],category.categoryName);
+        let productDiv = createProduct(category.products[i]);
         productsDiv.appendChild(productDiv);
     }
 
-    document.getElementById('content').appendChild(categoryDiv);
-    document.getElementById('content').appendChild(productsDiv);
+    $('#content').append(categoryDiv);
+    $('#content').append(productsDiv);
 });
 
-function createProduct(productDiv,categoryName){
+function createProduct(product){
+        let productDiv = document.createElement('div');
         productDiv.className = "product";
         
-        let logoDiv = document.createElement('div');
-        logoDiv.className = "logo";
-        let prodImg;
-        if(categoryName == "Процессоры"){
-            prodImg = "proc.jpg";
-        } else if(categoryName == "Видеокарты"){
-            prodImg = "vcard" + (Math.floor(Math.random() * 2) + 1) + ".jpg";
-        }
-        logoDiv.innerHTML = '<img src=' + prodImg + ' value="logoButton" width="150px"><div class="productName">' + product.productName + '</div>';
-        let infoProductDiv = document.createElement('div');
-        infoProductDiv.className = 'infoProduct';
-        
-        let characteristicsDiv = document.createElement('div');
-        characteristicsDiv.className = 'characteristics';
-        characteristicsDiv.innerHTML = '<ul><li>'+product.memory+'</li><li>'+product.frequency+'</li><li>'+product.price+'</li></ul>';
-
-        let buttonAddToBasketDiv = document.createElement('div');
-        buttonAddToBasketDiv.className = 'buttonAddToBasket';
-        buttonAddToBasketDiv.innerHTML = '<form><input type="button" value="В корзину" name="addToBasket"></form>';
-
-        infoProductDiv.appendChild(characteristicsDiv);
-        infoProductDiv.appendChild(buttonAddToBasketDiv);
-
-        productDiv.appendChild(logoDiv);
-        productDiv.appendChild(infoProductDiv);
+        productDiv.innerHTML = '<div class="logo"><img src="' + 
+        'prodImg/' + product.id + '.jpg" value="logoButton" width="150px">'+
+        '<div class="productName">' + product.productName + '</div>' +
+        '</div><div class="infoProduct"><div class="characteristics">' +
+        '<ul><li>' + product.memory + '</li><li>'+product.frequency+
+        '</li><li>'+product.price+'</li><li>' + product.id + '</li></ul>'+
+        '</div><div class="buttonAddToBasket"><form><input type="button" value="В корзину"'+
+        ' name="addToBasket"></form></div></div>';
 
         return productDiv;
+
 }
 
 let loginPassword = location.href.split("?")[1];
@@ -57,7 +42,7 @@ if (!username.innerText) {
 }
 
 function addToBasket() {
-    let addToBasketElement = this.parentElement;
+    let addToBasketElement = this.parentElement.cloneNode(true);
     addToBasketElement.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:none;");
     // addToBasketElement.getElementsByClassName("removeFromBasket")[0].setAttribute("style", "display:none;");
 
