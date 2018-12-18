@@ -1,22 +1,26 @@
 data.forEach(category => {
-    let categoryDiv = document.createElement('div');
-    categoryDiv.className = "category";
-    categoryDiv.innerHTML = "<div>" + category.categoryName + "</div>";
+    let categoryDiv = '<div class="category"><div>' + category.categoryName + '</div></div>';
     let productsDiv = document.createElement('div');
     productsDiv.className = "products";
     
     for (let i = 0; i < category.products.length; i++) {
-        const product = category.products[i];
-        
-        let productDiv = document.createElement('div');
+        let productDiv = createProduct(category.products[i],category.categoryName);
+        productsDiv.appendChild(productDiv);
+    }
+
+    document.getElementById('content').appendChild(categoryDiv);
+    document.getElementById('content').appendChild(productsDiv);
+});
+
+function createProduct(productDiv,categoryName){
         productDiv.className = "product";
         
         let logoDiv = document.createElement('div');
         logoDiv.className = "logo";
         let prodImg;
-        if(category.categoryName == "Процессоры"){
+        if(categoryName == "Процессоры"){
             prodImg = "proc.jpg";
-        } else if(category.categoryName == "Видеокарты"){
+        } else if(categoryName == "Видеокарты"){
             prodImg = "vcard" + (Math.floor(Math.random() * 2) + 1) + ".jpg";
         }
         logoDiv.innerHTML = '<img src=' + prodImg + ' value="logoButton" width="150px"><div class="productName">' + product.productName + '</div>';
@@ -37,14 +41,8 @@ data.forEach(category => {
         productDiv.appendChild(logoDiv);
         productDiv.appendChild(infoProductDiv);
 
-        productsDiv.appendChild(productDiv);
-    }
-
-    document.getElementById('content').appendChild(categoryDiv);
-    document.getElementById('content').appendChild(productsDiv);
-
-    // $('<div>', { class: 'category' }).appendTo('.category');
-});
+        return productDiv;
+}
 
 let loginPassword = location.href.split("?")[1];
 let username = document.getElementById("username");
