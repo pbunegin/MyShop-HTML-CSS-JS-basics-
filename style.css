@@ -89,12 +89,13 @@ input[src="img/logout.png"],
     flex-flow: wrap;
     border-radius: 10px;
 }
-.content .product:hover{
+.content .logo:hover,
+.content .infoProduct:hover{
     cursor: pointer;
 }
 
 .product{
-    width: 200px;
+    width: min-content;
     background: white;
     margin: 10px;
     padding: 15px;
@@ -105,6 +106,7 @@ input[src="img/logout.png"],
 
 .logo{
     text-align: center;
+    margin: 0 auto;
 }
 
 .infoProduct{
@@ -113,10 +115,16 @@ input[src="img/logout.png"],
     display: none;
 }
 
-.characteristics,
-.price{
+.characteristics{
     flex-grow: 1;
     padding-left: 30px;
+    border-right: 1px solid rgba(183, 183, 183, 0.46);
+}
+
+.price{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 40px;
 }
 
 .addToBasket,
@@ -156,8 +164,13 @@ input[src="img/logout.png"],
     border-radius:5px;
     box-shadow: 0px 0px 10px #000;
 }
-.popupMenu .infoProduct{
+
+#popup1 .infoProduct{
     display: flex;
+}
+
+#popup2 .product{
+    height: max-content;
 }
 
 .poupBasketProducts{
@@ -182,7 +195,11 @@ input[src="img/logout.png"],
 .poupSearchProducts{
     border: 1px solid gray;
     overflow: auto;
-    height: 400px;
+    min-height: 400px;
+    max-height: 500px;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    flex-flow: wrap;
 }
 
 .popupFooter{

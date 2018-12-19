@@ -1,3 +1,5 @@
+// $('.popupMenu .popupContent').css('height',window.innerHeight*0.7);
+
 data.forEach(category => {
     let categoryDiv = '<div class="category"><div>' + category.categoryName + '</div></div>';
     let productsDiv = document.createElement('div');
@@ -15,9 +17,10 @@ data.forEach(category => {
 function createProduct(product) {
     let productDiv = document.createElement('div');
     productDiv.className = "product";
+    productDiv.id = product.id;
 
-    productDiv.innerHTML = '<div class="logo"><img src="' +
-        'prodImg/' + product.id + '.jpg" value="logoButton" width="150px">' +
+    productDiv.innerHTML = '<div class="logo"><img src="prodImg/' + product.id +
+        '.jpg" value="logoButton" width="' + window.innerHeight*0.2 + '">' +
         '<div class="productName">' + product.productName + '</div>' +
         '</div><div class="infoProduct"><div class="characteristics">' +
         '<ul><li>' + product.memory + '</li><li>' + product.frequency +
@@ -50,7 +53,6 @@ function addToBasket() {
     addToBasketElement.setAttribute("style", "width:auto");
     addToBasketElement.getElementsByClassName("addToBasket")[0].removeAttribute("style");
     addToBasketElement.getElementsByClassName("removeFromBasket")[0].setAttribute("style", "display:initial;");
-    addToBasketElement.getElementsByClassName("infoProduct")[0].setAttribute("style", "display:flex;");
 
     $('#basketProducts').append(addToBasketElement);
     $('.removeFromBasket').on('click', removeFromBasket);
@@ -125,3 +127,19 @@ function searchHide() {
     $("#popup2").hide();
 }
 
+
+$('#searchField').on('input', searchOnSite);
+
+function searchOnSite(){
+    $('#searchProducts').empty();
+    let searchStr = this.value.toLowerCase();
+
+    data.forEach(category => {
+        category.products.forEach(product => {
+            if(~product.productName.toLowerCase().indexOf(searchStr)){
+                let elem  = document.getElementById(product.id).cloneNode(true);
+                $('#searchProducts').append(elem);
+            }
+        });
+    });
+}
