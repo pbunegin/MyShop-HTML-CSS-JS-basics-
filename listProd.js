@@ -398,6 +398,97 @@ let data = [
                 "frequency": "902 МГц",
                 "id": "6678465",
                 "price": "4699"
+            },
+            {
+                "productName": "MSI GeForce GT 710 1GD3H LP",
+                "memory": "1 ГБ DDR3",
+                "frequency": "954 МГц",
+                "id": "1045345",
+                "price": "2750"
+            },
+            {
+                "productName": "ASUS GeForce GT710-SL-1GD5",
+                "memory": "2 ГБ DDR3",
+                "frequency": "954 МГц",
+                "id": "1050967",
+                "price": "2899"
+            },
+            {
+                "productName": "ASUS GeForce GT710-SL-1GD5-BRK",
+                "memory": "1 ГБ DDR3",
+                "frequency": "954 МГц",
+                "id": "1049842",
+                "price": "2999"
+            },
+            {
+                "productName": "GIGABYTE GeForce N710SL-1GL",
+                "memory": "1 ГБ DDR3",
+                "frequency": "954 МГц",
+                "id": "1052343",
+                "price": "3150"
+            },
+            {
+                "productName": "INNO3D GeForce N710-1SDV-E3BX",
+                "memory": "2 ГБ DDR3",
+                "frequency": "954 МГц",
+                "id": "7980244",
+                "price": "3299"
+            },
+            {
+                "productName": "MSI GeForce GT 710 2GD3H LP",
+                "memory": "2 ГБ DDR3",
+                "frequency": "954 МГц",
+                "id": "1045346",
+                "price": "3350"
+            },
+            {
+                "productName": "Palit GeForce NEAT7100HD46-2080F",
+                "memory": "2 ГБ DDR3",
+                "frequency": "954 МГц",
+                "id": "1288582",
+                "price": "3499"
+            },
+            {
+                "productName": "ASUS GeForce 710-2-SL",
+                "memory": "2 ГБ DDR3",
+                "frequency": "954 МГц",
+                "id": "1049844",
+                "price": "3699"
+            },
+            {
+                "productName": "GIGABYTE GeForce GV-N710D5SL-2GL",
+                "memory": "2 ГБ DDR3",
+                "frequency": "730 МГц",
+                "id": "1243820",
+                "price": "3999"
+            },
+            {
+                "productName": "ASUS GeForce GT710-SL-2GD5-BRK",
+                "memory": "2 ГБ DDR3",
+                "frequency": "700 МГц",
+                "id": "1029803",
+                "price": "4250"
+            },
+            {
+                "productName": "ASUS GeForce GT710-SL-2GD5",
+                "memory": "1 ГБ DDR3",
+                "frequency": "902 МГц",
+                "id": "7910566",
+                "price": "4399"
+            },
+            {
+                "productName": "ASUS GeForce GT730-SL-2GD3-BRK",
+                "memory": "2 ГБ DDR3",
+                "frequency": "902 МГц",
+                "id": "1002724",
+                "price": "4550"
+            },
+            {
+                "productName": "Palit GeForce NEAT7300HD46-2080H",
+                "memory": "2 ГБ DDR3",
+                "frequency": "902 МГц",
+                "id": "6678465",
+                "price": "4699"
             }
         ]
     }

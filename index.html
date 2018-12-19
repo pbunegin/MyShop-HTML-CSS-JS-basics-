@@ -11,10 +11,14 @@
 <body>
     <div class="popupMenu" id="popup2">
         <div class="popupContent">
-            <div class="popupClose clearfix">
+            <div class="popupHeader clearfix">
                 <a href="javascript:searchHide()">
-                    <img class="imgSearch" value="Корзина" src="img/close.png">
+                    <img class="imgSearch" src="img/close.png">
                 </a>
+                <form action="" id="searchProd"></form>
+                    <input type="search" placeholder="Поиск..." style='width: 30%;' form="searchProd">
+                    <input type="submit" value="Поиск" form="searchProd">
+                
             </div>
             <div class="poupSearchProducts">
             </div>
@@ -24,69 +28,32 @@
 
     <div class="popupMenu" id="popup1">
         <div class="popupContent">
-            <div class="popupClose clearfix">
+            <div class="popupHeader clearfix">
+                Корзина
                 <a href="javascript:basketHide()">
-                    <img class="imgBasket" value="Корзина" src="img/close.png">
+                    <img class="imgBasket" src="img/close.png">
                 </a>
             </div>
             <div class="poupBasketProducts" id="basketProducts">
-                <div class="product">
-                    <div class="logo">
-                        <img src="prod1.jpg" value="logoButton" width="150px">
-                        <div class="productName">Телевизор</div>
-                    </div>
-                    <div class="infoProduct">
-                        <div class="characteristics">
-                            <ul>
-                                <li>sfhbsthnstr</li>
-                                <li>aervgaregvbr</li>
-                                <li>srthsthtsr</li>
-                                <li>srghsaerttsht</li>
-                            </ul>
-                        </div>
-                        <div class="buttonAddToBasket">
-                            <form><input type="button" value="В корзину" name="addToBasket"></form>
-                        </div>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="logo">
-                        <img src="prod1.jpg" value="logoButton" width="150px">
-                        <div class="productName">Телевизор</div>
-                    </div>
-                    <div class="infoProduct">
-                        <div class="characteristics">
-                            <ul>
-                                <li>sfhbsthnstr</li>
-                                <li>aervgaregvbr</li>
-                                <li>srthsthtsr</li>
-                                <li>srghsaerttsht</li>
-                            </ul>
-                        </div>
-                        <div class="buttonAddToBasket">
-                            <form><input type="button" value="В корзину" name="addToBasket"></form>
-                        </div>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="logo">
-                        <img src="prod1.jpg" value="logoButton" width="150px">
-                        <div class="productName">Телевизор</div>
-                    </div>
-                    <div class="infoProduct">
-                        <div class="characteristics">
-                            <ul>
-                                <li>sfhbsthnstr</li>
-                                <li>aervgaregvbr</li>
-                                <li>srthsthtsr</li>
-                                <li>srghsaerttsht</li>
-                            </ul>
-                        </div>
-                        <div class="buttonAddToBasket">
-                            <form><input type="button" value="В корзину" name="addToBasket"></form>
-                        </div>
-                    </div>
-                </div>
+                <!--Продукты в корзине -->
+
+            </div>
+            <div class="popupFooter">
+                <table>
+                    <tr>
+                        <td>Сумма товаров: </td>
+                        <td id="sum">12000</td>
+                    </tr>
+                    <tr>
+                        <td id="discount">Скидка 10%:</td>
+                        <td id="discountSum">1200</td>
+                    </tr>
+                    <tr class="total">
+                        <td>Итого: </td>
+                        <td id="totalSum">13400</td>
+                    </tr>
+                </table>
+                <button class="placeOrder">Оформить</button>
             </div>
         </div>
     </div>
@@ -112,7 +79,7 @@
 
     </div>
     <div class="content" id="content">
-        <div class="category">
+        <!-- <div class="category">
             <div>Телевизоры и медиа</div>
         </div>
         <div class="products">
@@ -124,7 +91,7 @@
                 <div class="infoProduct">
                     <div class="characteristics">
                         <ul>
-                            <li>sfhbsthnstr</li>
+                            <li>sfhbsthnstd</li>
                             <li>aervgaregvbr</li>
                             <li>srthsthtsr</li>
                             <li>srghsaerttsht</li>
@@ -133,587 +100,11 @@
                     <div class="price">12000</div>
                 </div>
 
-                <!-- <a href="javascript:login_click()"> -->
-                    <img class="addToBasket" value="В корзину" src="img/addToBasket.png">
-                <!-- </a> -->
-
-
-                <a href="javascript:basketShow()">
-                    <img class="removeFromBasket" value="В корзину" src="img/removeFromBasket.png">
-                </a>
+                <img class="addToBasket" value="В корзину" src="img/addToBasket.png">
+                <img class="removeFromBasket" value="В корзину" src="img/removeFromBasket.png">
 
             </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="category">
-            <div>Телевизоры и медиа22</div>
-        </div>
-
-        <div class="products">
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="category">
-            <div>Телевизоры и медиа33</div>
-        </div>
-
-        <div class="products">
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="logo"><img src="prod1.jpg" value="logoButton" width="150px">
-                    <div class="productName">Телевизор</div>
-                </div>
-                <div class="infoProduct">
-                    <div class="characteristics">
-                        <ul>
-                            <li>sfhbsthnstr</li>
-                            <li>aervgaregvbr</li>
-                            <li>srthsthtsr</li>
-                            <li>srghsaerttsht</li>
-                        </ul>
-                    </div>
-                    <div class="buttonAddToBasket">
-                        <form><input type="button" value="В корзину" name="addToBasket"></form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> -->
     </div>
     <div class="infoblock">
         <div>lkgjhddddddddddddddddddddddddddddddddddddddddddddddd</div>

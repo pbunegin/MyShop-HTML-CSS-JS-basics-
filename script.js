@@ -2,7 +2,7 @@ data.forEach(category => {
     let categoryDiv = '<div class="category"><div>' + category.categoryName + '</div></div>';
     let productsDiv = document.createElement('div');
     productsDiv.className = "products";
-    
+
     for (let i = 0; i < category.products.length; i++) {
         let productDiv = createProduct(category.products[i]);
         productsDiv.appendChild(productDiv);
@@ -12,21 +12,21 @@ data.forEach(category => {
     $('#content').append(productsDiv);
 });
 
-function createProduct(product){
-        let productDiv = document.createElement('div');
-        productDiv.className = "product";
-        
-        productDiv.innerHTML = '<div class="logo"><img src="' + 
-        'prodImg/' + product.id + '.jpg" value="logoButton" width="150px">'+
+function createProduct(product) {
+    let productDiv = document.createElement('div');
+    productDiv.className = "product";
+
+    productDiv.innerHTML = '<div class="logo"><img src="' +
+        'prodImg/' + product.id + '.jpg" value="logoButton" width="150px">' +
         '<div class="productName">' + product.productName + '</div>' +
         '</div><div class="infoProduct"><div class="characteristics">' +
-        '<ul><li>' + product.memory + '</li><li>'+product.frequency+
-        '</li><li>'+product.price+'</li><li>' + product.id + '</li></ul>'+
-        '</div><div class="buttonAddToBasket"><form><input type="button" value="В корзину"'+
-        ' name="addToBasket"></form></div></div>';
+        '<ul><li>' + product.memory + '</li><li>' + product.frequency +
+        '</li><li>' + product.price + '</li><li>' + product.id + '</li></ul>' +
+        '</div><div class="price">' + product.price + '</div></div>' +
+        '<img class="addToBasket" value="В корзину" src="img/addToBasket.png">' +
+        '<img class="removeFromBasket" value="В корзину" src="img/removeFromBasket.png"></div>';
 
-        return productDiv;
-
+    return productDiv;
 }
 
 let loginPassword = location.href.split("?")[1];
@@ -41,45 +41,73 @@ if (!username.innerText) {
     location.replace("login.html");
 }
 
+$('.addToBasket').on('click', addToBasket);
+
+$('.content .product').children().not('.addToBasket').on('click', productShow);
+
 function addToBasket() {
     let addToBasketElement = this.parentElement.cloneNode(true);
-    addToBasketElement.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:none;");
-    // addToBasketElement.getElementsByClassName("removeFromBasket")[0].setAttribute("style", "display:none;");
+    addToBasketElement.setAttribute("style", "width:auto");
+    addToBasketElement.getElementsByClassName("addToBasket")[0].removeAttribute("style");
+    addToBasketElement.getElementsByClassName("removeFromBasket")[0].setAttribute("style", "display:initial;");
+    addToBasketElement.getElementsByClassName("infoProduct")[0].setAttribute("style", "display:flex;");
 
     $('#basketProducts').append(addToBasketElement);
-    // document.getElementsById("basketProducts").appendChild(addToBasketElement);
-    let countProducts = document.getElementById("countProducts");
-    countProducts.innerText = $("basketProducts").length;
+    $('.removeFromBasket').on('click', removeFromBasket);
 
-    countProducts.setAttribute("style", "border: 1px solid red; border-radius: 10px;");
+    countProductsAndSum();
 }
 
-$('.addToBasket').on('click',addToBasket);
-
 function productShow() {
-    if (this.hasAttribute("style")) {
-        this.removeAttribute("style");
-        this.getElementsByClassName("infoProduct")[0].setAttribute("style", "display:none;");
-        this.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:none;");
+    let product = this.parentElement;
+    if (product.hasAttribute("style")) {
+        product.removeAttribute("style");
+        product.getElementsByClassName("infoProduct")[0].removeAttribute("style");
+        product.getElementsByClassName("addToBasket")[0].removeAttribute("style");
         return;
     }
 
-    products.forEach(prod => {
+    document.querySelectorAll(".content .product").forEach(prod => {
         prod.removeAttribute("style");
-        let infoProduct = prod.getElementsByClassName("infoProduct");
-        infoProduct[0].setAttribute("style", "display:none;");
+        prod.getElementsByClassName("infoProduct")[0].removeAttribute("style");
+        prod.getElementsByClassName("addToBasket")[0].removeAttribute("style");
     });
 
-    this.setAttribute("style", "width:100%;");
-    this.getElementsByClassName("infoProduct")[0].setAttribute("style", "display:flex;");
-    this.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:initial;");
-
+    product.setAttribute("style", "width:100%");
+    product.getElementsByClassName("infoProduct")[0].setAttribute("style", "display:flex;");
+    product.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:initial;");
 }
 
-let products = document.querySelectorAll(".product");
-products.forEach(element => {
-    element.addEventListener('click', productShow);
-});
+function removeFromBasket(){
+    document.getElementById('basketProducts').removeChild(this.parentElement);
+    countProductsAndSum();
+}
+
+function countProductsAndSum(){
+    let countProducts = document.getElementById("countProducts");
+    let count = $("#basketProducts").children().length;
+    countProducts.innerText = count;
+    if(count > 0){
+    countProducts.setAttribute("style", "border: 1px solid red; border-radius: 10px;");
+    }else{
+        countProducts.removeAttribute("style");
+        countProducts.innerText = '';
+    }
+    let  discount = Math.floor(Math.random() * (101));
+    $('#discount').text('Скидка ' + discount + '%:');
+
+    let sum = 0;
+    let prices = document.querySelectorAll('#basketProducts .price');
+    prices.forEach(element => {
+        sum += Number(element.innerHTML);
+    });
+
+    $('#sum').text(sum);
+
+    let discountSum = sum*discount/100;
+    $('#discountSum').text(discountSum);
+    $('#totalSum').text(sum - discountSum);
+}
 
 function basketShow() {
     $("#popup1").show();
