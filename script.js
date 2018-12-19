@@ -125,6 +125,8 @@ function searchShow() {
 
 function searchHide() {
     $("#popup2").hide();
+    $("#searchProducts").empty();
+    $("#searchField").val('');
 }
 
 
