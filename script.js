@@ -140,20 +140,20 @@ function countProductsAndSum() {
         countProducts.removeAttribute("style");
         countProducts.innerText = '';
     }
-    let discount = Math.floor(Math.random() * (101));
+    let discount = Math.random() * 101^0;
     $('#discount').text('Скидка ' + discount + '%:');
 
     let sum = 0;
     let prices = document.querySelectorAll('#basketProducts .price');
     prices.forEach(element => {
-        sum += Number(element.innerHTML);
+        sum += +element.innerHTML;
     });
 
     $('#sum').text(sum);
 
     let discountSum = sum * discount / 100;
-    $('#discountSum').text(discountSum);
-    $('#totalSum').text(sum - discountSum);
+    $('#discountSum').text(~~discountSum);
+    $('#totalSum').text(sum - discountSum^0);
 }
 
 function basketShow() {
