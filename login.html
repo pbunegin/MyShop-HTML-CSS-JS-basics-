@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <title>Вход в личный кабинет</title>
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
     <div class="login">
         <form action="index.html" target="_self">
-            <input type="text" name="login" placeholder="Имя пользователя"></label>
+            <input type="text" name="login" placeholder="Имя пользователя" required></label>
             <br>
-            <input type="password" name="password" placeholder="Пароль">
+            <input type="password" name="password" placeholder="Пароль" required>
             <br>
             <input type="submit" value="Войти">
             <br>
-            <a href="registration.html">Регистрация</a>
         </form>
+        <a href="registration.html">Регистация</a>
     </div>
-
-    <script src="script.js"></script>
 </body>
 
 </html>

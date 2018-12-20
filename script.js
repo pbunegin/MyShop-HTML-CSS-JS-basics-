@@ -1,18 +1,74 @@
 // $('.popupMenu .popupContent').css('height',window.innerHeight*0.7);
 
-data.forEach(category => {
-    let categoryDiv = '<div class="category"><div>' + category.categoryName + '</div></div>';
-    let productsDiv = document.createElement('div');
-    productsDiv.className = "products";
+$(document).ready(function () {
+    createContent();
 
-    for (let i = 0; i < category.products.length; i++) {
-        let productDiv = createProduct(category.products[i]);
-        productsDiv.appendChild(productDiv);
+    let loginPassword = location.href.split("?")[1];
+    let username = document.getElementById("username");
+
+    if (location.href.split("?")[0].endsWith('index.html')) {
+        if (!loginPassword) {
+            logout();
+        }
+        let login;
+        loginPassword.split("&").forEach(pair => {
+            if (pair.split("=")[0] == 'login') {
+                login = pair.split("=")[1];
+            }
+        });
+        username.innerText = login;
     }
 
-    $('#content').append(categoryDiv);
-    $('#content').append(productsDiv);
+    $('.addToBasket').on('click', addToBasket);
+    $('.content .product').children().not('.addToBasket').on('click', productShow);
+    $('#searchField').on('input', searchOnSite);
 });
+
+// $('.imgLogout').on('click', logout);
+
+function logout() {
+    location.replace("login.html");
+}
+
+//__________________________
+
+function checkPass() {
+    var password = $('#password').val();
+    var secondPassword = $('#secondPassword').val();
+    var bad = "";
+    if (secondPassword == "") {
+        bad = "Пароль не подтвержден. Пожалуйста, повторите ввод пароля";
+    }
+    else {
+        if (password != secondPassword) {
+            bad = "В полях 'Пароль' комбинации символов не совпадают";
+        }
+    }
+    if (bad != "") {
+        $('#secondPassword')
+            .css("background", "#ffcab2");
+        alert(bad);
+        return false;
+    }
+}
+
+//__________________________
+
+function createContent() {
+    data.forEach(category => {
+        let categoryDiv = '<div class="category"><div>' + category.categoryName + '</div></div>';
+        let productsDiv = document.createElement('div');
+        productsDiv.className = "products";
+
+        for (let i = 0; i < category.products.length; i++) {
+            let productDiv = createProduct(category.products[i]);
+            productsDiv.appendChild(productDiv);
+        }
+
+        $('#content').append(categoryDiv);
+        $('#content').append(productsDiv);
+    });
+}
 
 function createProduct(product) {
     let productDiv = document.createElement('div');
@@ -20,7 +76,7 @@ function createProduct(product) {
     productDiv.id = product.id;
 
     productDiv.innerHTML = '<div class="logo"><img src="prodImg/' + product.id +
-        '.jpg" value="logoButton" width="' + window.innerHeight*0.2 + '">' +
+        '.jpg" value="logoButton" width="' + window.innerHeight * 0.2 + '">' +
         '<div class="productName">' + product.productName + '</div>' +
         '</div><div class="infoProduct"><div class="characteristics">' +
         '<ul><li>' + product.memory + '</li><li>' + product.frequency +
@@ -28,31 +84,16 @@ function createProduct(product) {
         '</div><div class="price">' + product.price + '</div></div>' +
         '<img class="addToBasket" value="В корзину" src="img/addToBasket.png">' +
         '<img class="removeFromBasket" value="В корзину" src="img/removeFromBasket.png"></div>';
-
     return productDiv;
 }
-
-let loginPassword = location.href.split("?")[1];
-let username = document.getElementById("username");
-
-if (loginPassword.split("&")[0].split("=")[0] == "login" && loginPassword) {
-    let login = loginPassword.split("&")[0].split("=")[1];
-    username.innerText = login;
-}
-
-if (!username.innerText) {
-    location.replace("login.html");
-}
-
-$('.addToBasket').on('click', addToBasket);
-
-$('.content .product').children().not('.addToBasket').on('click', productShow);
 
 function addToBasket() {
     let addToBasketElement = this.parentElement.cloneNode(true);
     addToBasketElement.setAttribute("style", "width:auto");
+    addToBasketElement.removeAttribute("id");
     addToBasketElement.getElementsByClassName("addToBasket")[0].removeAttribute("style");
     addToBasketElement.getElementsByClassName("removeFromBasket")[0].setAttribute("style", "display:initial;");
+    
 
     $('#basketProducts').append(addToBasketElement);
     $('.removeFromBasket').on('click', removeFromBasket);
@@ -69,33 +110,37 @@ function productShow() {
         return;
     }
 
-    document.querySelectorAll(".content .product").forEach(prod => {
-        prod.removeAttribute("style");
-        prod.getElementsByClassName("infoProduct")[0].removeAttribute("style");
-        prod.getElementsByClassName("addToBasket")[0].removeAttribute("style");
-    });
+    productsHide();
 
     product.setAttribute("style", "width:100%");
     product.getElementsByClassName("infoProduct")[0].setAttribute("style", "display:flex;");
     product.getElementsByClassName("addToBasket")[0].setAttribute("style", "display:initial;");
 }
 
-function removeFromBasket(){
+function productsHide() {
+    document.querySelectorAll(".content .product").forEach(prod => {
+        prod.removeAttribute("style");
+        prod.getElementsByClassName("infoProduct")[0].removeAttribute("style");
+        prod.getElementsByClassName("addToBasket")[0].removeAttribute("style");
+    });
+}
+
+function removeFromBasket() {
     document.getElementById('basketProducts').removeChild(this.parentElement);
     countProductsAndSum();
 }
 
-function countProductsAndSum(){
+function countProductsAndSum() {
     let countProducts = document.getElementById("countProducts");
     let count = $("#basketProducts").children().length;
     countProducts.innerText = count;
-    if(count > 0){
-    countProducts.setAttribute("style", "border: 1px solid red; border-radius: 10px;");
-    }else{
+    if (count > 0) {
+        countProducts.setAttribute("style", "visibility: visible;");
+    } else {
         countProducts.removeAttribute("style");
         countProducts.innerText = '';
     }
-    let  discount = Math.floor(Math.random() * (101));
+    let discount = Math.floor(Math.random() * (101));
     $('#discount').text('Скидка ' + discount + '%:');
 
     let sum = 0;
@@ -106,13 +151,14 @@ function countProductsAndSum(){
 
     $('#sum').text(sum);
 
-    let discountSum = sum*discount/100;
+    let discountSum = sum * discount / 100;
     $('#discountSum').text(discountSum);
     $('#totalSum').text(sum - discountSum);
 }
 
 function basketShow() {
     $("#popup1").show();
+    productsHide();
 }
 
 function basketHide() {
@@ -121,6 +167,7 @@ function basketHide() {
 
 function searchShow() {
     $("#popup2").show();
+    productsHide();
 }
 
 function searchHide() {
@@ -129,17 +176,14 @@ function searchHide() {
     $("#searchField").val('');
 }
 
-
-$('#searchField').on('input', searchOnSite);
-
-function searchOnSite(){
+function searchOnSite() {
     $('#searchProducts').empty();
     let searchStr = this.value.toLowerCase();
 
     data.forEach(category => {
         category.products.forEach(product => {
-            if(~product.productName.toLowerCase().indexOf(searchStr)){
-                let elem  = document.getElementById(product.id).cloneNode(true);
+            if (~product.productName.toLowerCase().indexOf(searchStr)) {
+                let elem = document.getElementById(product.id).cloneNode(true);
                 $('#searchProducts').append(elem);
             }
         });

@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>Список товаров</title>
     <link rel="stylesheet" href="style.css">
-    <script src="jquery-3.3.1.min.js"></script>
     <script src="listProd.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -16,9 +17,9 @@
                     <img class="imgSearch" src="img/close.png">
                 </a>
                 <form action="" id="searchProd"></form>
-                    <input id="searchField" type="search" placeholder="Поиск..." style='width: 30%;' form="searchProd">
-                    <input type="submit" value="Поиск" form="searchProd">
-                
+                <input id="searchField" type="search" placeholder="Поиск..." style='width: 30%;' form="searchProd">
+                <input type="submit" value="Поиск" form="searchProd">
+
             </div>
             <div class="poupSearchProducts" id="searchProducts">
                 <!--Продукты в поиске-->
@@ -43,15 +44,15 @@
                 <table>
                     <tr>
                         <td>Сумма товаров: </td>
-                        <td id="sum">12000</td>
+                        <td id="sum">0</td>
                     </tr>
                     <tr>
                         <td id="discount">Скидка 10%:</td>
-                        <td id="discountSum">1200</td>
+                        <td id="discountSum">0</td>
                     </tr>
                     <tr class="total">
                         <td>Итого: </td>
-                        <td id="totalSum">13400</td>
+                        <td id="totalSum">0</td>
                     </tr>
                 </table>
                 <button class="placeOrder">Оформить</button>
@@ -61,10 +62,10 @@
 
     <div class="menu">
         <div class="cabinet">
+            <a href="login.html">
+                <img class="imgLogout" value="Поиск" src="img/logout.png">
+            </a>
             <div class="username" id="username"></div>
-            <form action="login.html" target="_self">
-                <input type="image" value="Выйти" src="img/logout.png">
-            </form>
         </div>
         <div class="search">
             <a href="javascript:searchShow()">
@@ -74,8 +75,8 @@
         <div class="basket">
             <a href="javascript:basketShow()">
                 <img class="imgBasket" value="Корзина" src="img/basket.png">
-                <div class="countProducts" id="countProducts"></div>
             </a>
+            <div class="countProducts" id="countProducts"></div>
         </div>
 
     </div>
@@ -107,10 +108,9 @@
             </div>
         </div> -->
     </div>
-    <div class="infoblock">
-        <div>lkgjhddddddddddddddddddddddddddddddddddddddddddddddd</div>
+    <div class="footer">
+        <div>Java RD. Project "HTML, CSS, JS basics". Made by Petr Bunegin.</div>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>

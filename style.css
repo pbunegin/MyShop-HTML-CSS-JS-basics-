@@ -15,17 +15,19 @@ input{
 .login{
     width: fit-content;
     height: fit-content;
-    margin: auto;
+    margin: 10% auto;
     background: cyan;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
 }
 
-input[src="img/logout.png"],
+.imgLogout,
 .imgBasket,
 .imgSearch{
-    max-height: 20px;
+    position: relative;
+    top: -5px;
+    max-height: 30px;
     cursor:pointer;
 }
 
@@ -48,35 +50,59 @@ input[src="img/logout.png"],
     justify-content: space-between;
 }
 
+.cabinet,
+.search,
+.basket{
+    width: 33%;
+}
+
+.cabinet{
+    display: flex;
+    flex-flow: row;
+}
+
+.search{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.basket{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+}
+
 .cabinet div,
-.cabinet form,
-.basket form,
 .basket .countProducts{
-    float: right;
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 .countProducts{
-    width: 12px;
-    border-radius: 100%;
-    font-size: 9px;
-    vertical-align: super;
+    visibility: hidden;
+    width: 14px;
+    border: 1px solid red;
+    border-radius: 50%;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     padding: 1px;
+    padding-top: 2px;
 }
 
 .content{
     margin-top: 50px;
 }
 
-.infoblock div,
+.footer div,
 .category div{
     display: table;
     margin: 0 auto;
 }
 
 .category{
+    font-size: 20px;
+    font-weight: bold;
     margin: 10px auto;
     background: rgb(0, 255, 128);
     padding: 5px;
@@ -90,6 +116,7 @@ input[src="img/logout.png"],
     background:rgb(204, 204, 204);
     display: flex;
     flex-flow: wrap;
+    justify-content: space-around;
     border-radius: 10px;
 }
 .content .logo:hover,
@@ -140,13 +167,16 @@ input[src="img/logout.png"],
 }
 
 
-.infoblock{
+.footer{
     position: absolute;
     background: burlywood;
     left: 0;
     right: 0;
     margin-top: 3px;
     padding: 1%;
+    font-size: 18px;
+    font-weight: bold;
+
 }
 
 .popupMenu{
