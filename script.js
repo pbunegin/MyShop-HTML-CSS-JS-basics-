@@ -33,9 +33,9 @@ function logout() {
 //__________________________
 
 function checkPass() {
-    var password = $('#password').val();
-    var secondPassword = $('#secondPassword').val();
-    var bad = "";
+    const password = $('#password').val();
+    const secondPassword = $('#secondPassword').val();
+    let bad = "";
     if (secondPassword == "") {
         bad = "Пароль не подтвержден. Пожалуйста, повторите ввод пароля";
     }
